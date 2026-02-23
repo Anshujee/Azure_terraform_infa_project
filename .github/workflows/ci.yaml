@@ -27,3 +27,5 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
+
+# adding a comment to test the workflow. 
