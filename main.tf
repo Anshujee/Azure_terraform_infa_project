@@ -9,6 +9,15 @@ terraform {
   }
 }
 
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "tfstate-rg"
+    storage_account_name = "tfstateanshu12345"
+    container_name       = "tfstate"
+    key                  = "terraform.tfstate"
+  }
+}
+
 provider "azurerm" {
   features {}
 }
@@ -131,4 +140,4 @@ output "public_ip" {
   value = azurerm_public_ip.public_ip.ip_address
 }
 
-# Chenge Credentials
+

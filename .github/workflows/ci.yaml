@@ -1,7 +1,9 @@
-name: Terraform Deploy
+name: Terraform Apply
 
 on:
   push:
+    branches:
+      - main
 
 jobs:
   terraform:
@@ -19,7 +21,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
-      - name: Terraform Init
+      - name: Terraform Init (Remote Backend)
         run: terraform init
 
       - name: Terraform Plan
@@ -27,5 +29,3 @@ jobs:
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
-
-# adding a comment to test the workflow. 
