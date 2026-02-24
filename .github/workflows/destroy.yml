@@ -1,14 +1,14 @@
 name: Terraform Destroy
 
 on:
-  workflow_dispatch:   # manual trigger button
+  workflow_dispatch:
 
 jobs:
   destroy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Code
         uses: actions/checkout@v3
 
       - name: Azure Login
@@ -19,7 +19,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
 
-      - name: Terraform Init
+      - name: Terraform Init (Remote Backend)
         run: terraform init
 
       - name: Terraform Destroy
