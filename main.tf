@@ -141,3 +141,4 @@ output "public_ip" {
 }
 
 
+# Check if the VM is running.
